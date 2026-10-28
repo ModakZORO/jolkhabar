@@ -20,9 +20,6 @@
       --text-muted: #8e95a5;
       --font-display: 'Syne', sans-serif;
       --font-body: 'Plus Jakarta Sans', sans-serif;
-      --bot-steel: #232936;
-      --bot-metal-light: #48546a;
-      --bot-core: #ff5e14;
     }
 
     * {
@@ -52,7 +49,7 @@
       z-index: 0;
     }
 
-    /* Glowing Backdrop Blobs */
+    /* Ambient Glow Blobs */
     .glow-sphere {
       position: fixed;
       border-radius: 50%;
@@ -86,7 +83,7 @@
       100% { transform: translate(-40px, 70px) scale(0.95); }
     }
 
-    /* Header & Navigation */
+    /* Navigation */
     header {
       position: sticky;
       top: 0;
@@ -162,7 +159,6 @@
       box-shadow: 0 10px 28px rgba(255, 94, 20, 0.5);
     }
 
-    /* Main Container */
     main {
       position: relative;
       z-index: 1;
@@ -225,7 +221,7 @@
       margin-bottom: 2.5rem;
     }
 
-    /* 3D Showcase Grid */
+    /* Showcase Section */
     .showcase-section {
       padding: 2rem 0 6rem;
     }
@@ -257,7 +253,7 @@
       perspective: 1000px;
     }
 
-    /* Interactive Tilt Card */
+    /* 3D Tilt Card */
     .card-wrapper {
       transform-style: preserve-3d;
       will-change: transform;
@@ -311,7 +307,6 @@
       filter: brightness(1.05) contrast(1.1);
     }
 
-    /* Floating Tags on Image */
     .badge-tag {
       position: absolute;
       top: 1rem;
@@ -411,25 +406,7 @@
       box-shadow: 0 8px 24px rgba(255, 94, 20, 0.4);
     }
 
-    /* Footer */
-    footer {
-      border-top: 1px solid var(--card-border);
-      padding: 3rem 0;
-      text-align: center;
-      color: var(--text-muted);
-      font-size: 0.9rem;
-      position: relative;
-      z-index: 1;
-    }
-
-    footer span {
-      color: var(--accent-orange);
-      font-weight: 600;
-    }
-
-    /* =========================================================
-       ANIMATED BODYBUILDER CYBORG (Walks In, Flexes & Waves)
-       ========================================================= */
+    /* Bodybuilder Cyborg */
     .robot-stage {
       position: fixed;
       bottom: 12px;
@@ -444,7 +421,6 @@
       user-select: none;
     }
 
-    /* Robot Speech Bubble */
     .robot-speech {
       background: rgba(15, 17, 25, 0.92);
       border: 1px solid var(--accent-orange);
@@ -478,7 +454,6 @@
       50% { transform: translateY(-4px); }
     }
 
-    /* Bodybuilder Bot Structure */
     .titan-bot {
       width: 140px;
       height: 190px;
@@ -489,7 +464,6 @@
       animation: heavyWalkBob 0.8s ease-in-out infinite alternate;
     }
 
-    /* Head & Visor */
     .bot-head {
       width: 38px;
       height: 32px;
@@ -527,7 +501,6 @@
       100% { box-shadow: 0 0 16px #ff5e14; background: #ffaa00; }
     }
 
-    /* Massive Bodybuilder Traps & Torso */
     .bot-torso {
       width: 78px;
       height: 65px;
@@ -556,7 +529,6 @@
       100% { transform: scale(1.15); opacity: 1; box-shadow: 0 0 20px #ffaa00; }
     }
 
-    /* Hypertrophied Delts & Arms */
     .bot-arm {
       position: absolute;
       top: 32px;
@@ -609,7 +581,6 @@
       box-shadow: 0 0 8px rgba(255,94,20,0.6);
     }
 
-    /* Waist & Power Hips */
     .bot-waist {
       width: 36px;
       height: 14px;
@@ -620,7 +591,6 @@
       z-index: 2;
     }
 
-    /* Quadriceps & Stomping Calves */
     .bot-legs-container {
       width: 60px;
       display: flex;
@@ -673,29 +643,13 @@
       box-shadow: 0 0 8px rgba(255, 94, 20, 0.7);
     }
 
-    /* Robot Motion & Animation Timeline */
     @keyframes robotApproach {
-      0% {
-        transform: translateX(120px) scale(0.65);
-        opacity: 0;
-      }
-      10% {
-        opacity: 1;
-      }
-      35% {
-        transform: translateX(0px) scale(1.05); /* Marches up close */
-      }
-      65% {
-        transform: translateX(0px) scale(1.05); /* Stops to wave & flex */
-      }
-      85% {
-        opacity: 1;
-        transform: translateX(-40px) scale(0.7); /* Marches away */
-      }
-      100% {
-        transform: translateX(-160px) scale(0.5);
-        opacity: 0;
-      }
+      0% { transform: translateX(120px) scale(0.65); opacity: 0; }
+      10% { opacity: 1; }
+      35% { transform: translateX(0px) scale(1.05); }
+      65% { transform: translateX(0px) scale(1.05); }
+      85% { opacity: 1; transform: translateX(-40px) scale(0.7); }
+      100% { transform: translateX(-160px) scale(0.5); opacity: 0; }
     }
 
     @keyframes heavyWalkBob {
@@ -715,24 +669,32 @@
 
     @keyframes rightArmPump {
       0%, 30% { transform: rotate(-25deg); }
-      35%, 65% {
-        /* Waving & flexing up close */
-        transform: rotate(-135deg) scale(1.1);
-      }
+      35%, 65% { transform: rotate(-135deg) scale(1.1); }
       45%, 55% { transform: rotate(-110deg) scale(1.1); }
       70%, 100% { transform: rotate(25deg); }
     }
 
     @keyframes leftArmFlex {
       0%, 30% { transform: rotate(25deg); }
-      35%, 65% {
-        /* Side lat flex */
-        transform: rotate(45deg) scale(1.08);
-      }
+      35%, 65% { transform: rotate(45deg) scale(1.08); }
       70%, 100% { transform: rotate(-25deg); }
     }
 
-    /* Responsive adjustments */
+    footer {
+      border-top: 1px solid var(--card-border);
+      padding: 3rem 0;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    footer span {
+      color: var(--accent-orange);
+      font-weight: 600;
+    }
+
     @media (max-width: 768px) {
       .nav-links { display: none; }
       .hero { padding: 3rem 0 2rem; }
@@ -743,14 +705,11 @@
 </head>
 <body>
 
-  <!-- Floating Glow Particles Canvas -->
   <canvas id="emberCanvas"></canvas>
 
-  <!-- Ambient Light Fields -->
   <div class="glow-sphere glow-1"></div>
   <div class="glow-sphere glow-2"></div>
 
-  <!-- Header Navigation -->
   <header>
     <nav>
       <div class="logo">
@@ -766,7 +725,6 @@
   </header>
 
   <main>
-    <!-- Hero Section -->
     <section class="hero">
       <div class="hero-badge">
         <span>🔥</span> Freshly Wok-Tossed & Handcrafted
@@ -779,7 +737,6 @@
       </p>
     </section>
 
-    <!-- 3D Showcase Menu Grid -->
     <section class="showcase-section" id="menu">
       <div class="section-header">
         <div>
@@ -793,4 +750,112 @@
         <!-- CARD 1: Chowmin .jpg -->
         <div class="card-wrapper" data-tilt>
           <div class="food-card">
-            <div class=
+            <div class="card-img-container">
+              <span class="badge-tag"><span class="badge-dot"></span> Chef's Wok Choice</span>
+              <img src="Chowmin .jpg" alt="Chowmin" loading="lazy">
+              <div class="price-badge">₹90</div>
+            </div>
+            <div class="card-details">
+              <div class="card-header-line">
+                <h3 class="item-title">Kolkata Desi Chowmin</h3>
+              </div>
+              <p class="item-desc">High-heat wok-tossed noodles coated in house spices, crisp seasonal veggies, and signature zesty sauces.</p>
+              <div class="card-action">
+                <button class="action-btn" onclick="orderItem('Kolkata Desi Chowmin')">
+                  <span>Add to Plate</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 2: Paratha.jpg -->
+        <div class="card-wrapper" data-tilt>
+          <div class="food-card">
+            <div class="card-img-container">
+              <span class="badge-tag"><span class="badge-dot"></span> Crispy & Flaky</span>
+              <img src="Paratha.jpg" alt="Paratha" loading="lazy">
+              <div class="price-badge">₹40</div>
+            </div>
+            <div class="card-details">
+              <div class="card-header-line">
+                <h3 class="item-title">Crispy Layered Paratha</h3>
+              </div>
+              <p class="item-desc">Multi-layered golden paratha griddled in pure ghee, soft on the inside with an unmatched crunch outside.</p>
+              <div class="card-action">
+                <button class="action-btn" onclick="orderItem('Crispy Layered Paratha')">
+                  <span>Add to Plate</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 3: Some items .jpg -->
+        <div class="card-wrapper" data-tilt>
+          <div class="food-card">
+            <div class="card-img-container">
+              <span class="badge-tag"><span class="badge-dot"></span> Platter Feast</span>
+              <img src="Some items .jpg" alt="Special Combo items" loading="lazy">
+              <div class="price-badge">₹150</div>
+            </div>
+            <div class="card-details">
+              <div class="card-header-line">
+                <h3 class="item-title">Special Combo Platter</h3>
+              </div>
+              <p class="item-desc">A curated assortment of savory evening jolkhabar snacks, freshly fried appetizers, and tangy condiments.</p>
+              <div class="card-action">
+                <button class="action-btn" onclick="orderItem('Special Combo Platter')">
+                  <span>Add to Plate</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <aside class="robot-stage" onclick="botCheer()" title="Click me for a flex!">
+    <div class="robot-speech" id="botBubble">Fuel up, Champion! 💪🤖</div>
+    <div class="titan-bot">
+      <div class="bot-head">
+        <div class="bot-crest"></div>
+        <div class="bot-visor"></div>
+      </div>
+      <div class="bot-arm left">
+        <div class="bicep"></div>
+        <div class="forearm"></div>
+      </div>
+      <div class="bot-torso">
+        <div class="bot-core-reactor"></div>
+      </div>
+      <div class="bot-arm right">
+        <div class="bicep"></div>
+        <div class="forearm"><div class="fist"></div></div>
+      </div>
+      <div class="bot-waist"></div>
+      <div class="bot-legs-container">
+        <div class="bot-leg left">
+          <div class="quad"></div>
+          <div class="calf"><div class="foot"></div></div>
+        </div>
+        <div class="bot-leg right">
+          <div class="quad"></div>
+          <div class="calf"><div class="foot"></div></div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <footer id="contact">
+    <p>© 2026 <span>Jolkhabar</span> Food Shop. Handcrafted with passion.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
