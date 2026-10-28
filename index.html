@@ -25,37 +25,24 @@
             color: #ff6b6b;
             margin-top: 10px;
         }
-        /* Bodybuilder Romeo Robot Animations */
-        .robot-container {
-            font-size: 55px;
+        /* Bodybuilder Robot Animation */
+        .robot-box {
+            font-size: 70px;
             margin: 15px 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-        }
-        .flex-muscle {
             display: inline-block;
-            animation: flexMuscle 1.5s infinite alternate ease-in-out;
+            animation: bodybuilderFlex 1.2s infinite alternate ease-in-out;
+            transform-origin: bottom center;
         }
-        .romeo-kiss {
-            display: inline-block;
-            animation: blowKiss 2s infinite ease-in-out;
-            transform-origin: bottom left;
-        }
-        @keyframes flexMuscle {
+        @keyframes bodybuilderFlex {
             0% { transform: scale(1) rotate(0deg); }
-            100% { transform: scale(1.25) rotate(-10deg); }
-        }
-        @keyframes blowKiss {
-            0%, 100% { transform: translateY(0) scale(1); opacity: 0.8; }
-            50% { transform: translateY(-12px) scale(1.3); opacity: 1; }
+            50% { transform: scale(1.15) rotate(-5deg); }
+            100% { transform: scale(1.2) rotate(5deg); }
         }
         .tagline {
             font-style: italic;
-            color: #e84393;
+            color: #ff6b6b;
             font-weight: bold;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
         /* Food Card Styles */
         .food-card {
@@ -76,22 +63,16 @@
 <body>
 
     <div class="container">
-        <!-- Bodybuilder Romeo Robot Animation -->
-        <div class="robot-container">
-            <span class="flex-muscle">🦾</span>
-            <span>🤖</span>
-            <span class="flex-muscle">🦾</span>
-            <span class="romeo-kiss">💋</span>
-        </div>
-        
-        <div class="tagline">"So irresistible, it'll make your heart race!"</div>
+        <!-- Flexing Bodybuilder Robot -->
+        <div class="robot-box">🤖</div>
+        <div class="tagline">"Built strong, serving fresh!"</div>
 
         <h1>Jolkhabar 🍲</h1>
         <p>Welcome to our delicious food corner!</p>
 
         <div class="food-card">
-            <!-- Ensure your image filename in GitHub matches: chowmin.jpg or Chowmin.jpg -->
-            <img src="Chowmin.jpg" alt="Charming Chowmein">
+            <!-- Using lowercase 'chowmin.jpg' to ensure it matches your file -->
+            <img src="chowmin.jpg" alt="Charming Chowmein" onerror="this.src='Chowmin.jpg';">
             <h3>Charming Chowmein</h3>
         </div>
 
