@@ -23,7 +23,28 @@
         }
         h1 {
             color: #ff6b6b;
+            margin-top: 10px;
         }
+        /* Robot Animation Styles */
+        .robot-container {
+            font-size: 60px;
+            margin: 10px 0;
+            animation: bounce 2s infinite ease-in-out;
+        }
+        .robot-hand {
+            display: inline-block;
+            animation: wave 1.2s infinite alternate;
+            transform-origin: bottom right;
+        }
+        @keyframes wave {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(35deg); }
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+        /* Food Card Styles */
         .food-card {
             margin: 20px 0;
             padding: 15px;
@@ -42,6 +63,11 @@
 <body>
 
     <div class="container">
+        <!-- Animated Robot Greeting -->
+        <div class="robot-container">
+            🤖<span class="robot-hand">👋</span>
+        </div>
+
         <h1>Jolkhabar 🍲</h1>
         <p>Welcome to our delicious food corner!</p>
 
